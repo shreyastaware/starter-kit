@@ -8,6 +8,7 @@ import HamburgerSVG from './icons/svgs/HamburgerSVG';
 import { PublicationLogo } from './publication-logo';
 import PublicationSidebar from './sidebar';
 import { SubscribeForm } from './subscribe-form';
+import { ThemeToggle } from './theme-toggle';
 
 function hasUrl(
 	navbarItem: PublicationNavbarItem,
@@ -102,6 +103,7 @@ export const Header = () => {
 					<nav className="hidden lg:block">{navList}</nav>
 					{/* <Button href={baseUrl} as="a" type="primary" label="Book a demo" /> */}
 					<SubscribeForm widthFraction="w-1/2"/>
+					<ThemeToggle />
 				</div>
 			</Container>
 			<div className="mt-5 flex justify-center lg:hidden">
