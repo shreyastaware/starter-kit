@@ -13,6 +13,7 @@ export const Meta = () => {
 			<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000" />
 			<meta name="msapplication-TileColor" content="#000000" />
 			<meta name="theme-color" content="#000" />
+			<meta name="google-site-verification" content="T4zYbeauts5jjl9_RZoZGMhD0TUdH5W7eARuUwpubYk" />
 		</>
 	);
 
