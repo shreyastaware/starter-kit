@@ -1,5 +1,5 @@
 import { ImgHTMLAttributes } from 'react';
-
+import Image1 from 'next/image';
 import Image, { ImageProps } from 'next/legacy/image';
 
 type Props = {
@@ -43,7 +43,7 @@ function CustomImage(props: Props) {
 
   if (isGif || !isHashnodeCDNImage) {
     // restOfTheProps will contain all props excluding the next/image props
-    return <img {...restOfTheProps} alt={alt} src={src || originalSrc} />;
+    return <Image {...restOfTheProps} alt={alt} src={src || originalSrc} />;
   }
 
   // Notes we are passing whole props object here

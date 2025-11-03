@@ -158,7 +158,7 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 								<h2 className="text-primary-600 dark:text-primary-500 mb-5 text-center text-lg font-semibold">
 									Subscribe to our newsletter for updates and changelog.
 								</h2>
-								<SubscribeForm />
+								<SubscribeForm widthFraction='w-full'/>
 							</div>
 						</div>
 					)}

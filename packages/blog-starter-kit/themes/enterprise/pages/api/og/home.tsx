@@ -2,6 +2,7 @@ import { resizeImage } from '@starter-kit/utils/image';
 import { ImageResponse } from '@vercel/og';
 import { type NextRequest } from 'next/server';
 import { DEFAULT_AVATAR } from '../../../utils/const';
+import Image from 'next/image'; // 1. Import it
 
 export const config = {
 	runtime: 'edge',
@@ -77,11 +78,18 @@ export default async function handler(req: NextRequest) {
 						<div tw="absolute -top-px -left-px -right-px -bottom-px rounded-xl border-2 border-black/5" />
 						<div tw="mx-auto flex flex-row items-center" style={{ width: '90%' }}>
 							<div tw="mr-20 flex h-56 w-56 overflow-hidden rounded-full">
-								<img
+								{/* <img
 									tw="w-full"
 									alt="name"
 									src={resizeImage(photo, { w: 400, h: 400, c: 'face' })}
-								/>
+								/> */}
+								<Image 
+								src={resizeImage(photo, { w: 400, h: 400, c: 'face' })} 
+								alt="name" 
+								tw="w-full"								
+								// width={1200} 
+								// height={630} 
+								/>								
 							</div>
 							<div tw="flex flex-1 flex-col items-start">
 								{/* Either show the Site title below or Site logo depending on whether a blog has a logo or not */}
@@ -91,11 +99,18 @@ export default async function handler(req: NextRequest) {
 
 								{/* Site Logo - load dark logo only if the site is set to open in dark mode */}
 								{logo ? (
-									<img
+									// <img
+									// 	tw="block w-3/4"
+									// 	alt="name"
+									// 	src={resizeImage(logo, { w: 1000, h: 250, c: 'thumb' })}
+									// />
+									<Image 
 										tw="block w-3/4"
 										alt="name"
-										src={resizeImage(logo, { w: 1000, h: 250, c: 'thumb' })}
-									/>
+										src={resizeImage(logo, { w: 1000, h: 250, c: 'thumb' })}							
+									// width={1200} 
+									// height={630} 
+									/>										
 								) : null}
 
 								{/* Show domain name */}
@@ -139,11 +154,18 @@ export default async function handler(req: NextRequest) {
 							{/* Show the following if the team doesn't have a logo and has a thumbnail/favicon */}
 							{!logo && favicon && (
 								<div tw="mr-20 flex h-56 w-56 overflow-hidden rounded-full">
-									<img
+									{/* <img
 										tw="w-full"
 										alt="name"
 										src={`${favicon}?w=400&h=400&fit=crop&crop=faces&auto=compress`}
-									/>
+									/> */}
+									<Image 
+										tw="w-full"
+										alt="name"
+										src={`${favicon}?w=400&h=400&fit=crop&crop=faces&auto=compress`}						
+									// width={1200} 
+									// height={630} 
+									/>												
 								</div>
 							)}
 							<div tw="flex flex-1 flex-col items-start">
@@ -153,7 +175,16 @@ export default async function handler(req: NextRequest) {
 								{!logo && title && <p tw="m-0 text-5xl font-bold">{title}</p>}
 
 								{/* Site Logo */}
-								{logo ? <img tw="mb-10 block w-1/2" alt="name" src={logo} /> : null}
+								{logo ? 
+								// <img tw="mb-10 block w-1/2" alt="name" src={logo} /> 
+								<Image 
+									tw="mb-10 block w-1/2"
+									alt="name"
+									src={logo}						
+								// width={1200} 
+								// height={630} 
+								/>		
+								: null}
 
 								{/* Show domain name */}
 								<p tw="m-0 my-5 text-2xl font-semibold opacity-75">{domain}</p>
