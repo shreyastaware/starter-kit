@@ -101,7 +101,7 @@ export const Header = () => {
 				<div className="col-span-2 flex flex-row items-center justify-end gap-5 text-slate-300 lg:col-span-3">
 					<nav className="hidden lg:block">{navList}</nav>
 					{/* <Button href={baseUrl} as="a" type="primary" label="Book a demo" /> */}
-					<SubscribeForm />
+					<SubscribeForm widthFraction="w-1/2"/>
 				</div>
 			</Container>
 			<div className="mt-5 flex justify-center lg:hidden">

@@ -10,7 +10,7 @@ import { useAppContext } from './contexts/appContext';
 
 const GQL_ENDPOINT = process.env.NEXT_PUBLIC_HASHNODE_GQL_ENDPOINT;
 
-export const SubscribeForm = () => {
+export const SubscribeForm = ({ widthFraction }: { widthFraction: string }) => {
 	const [status, setStatus] = useState<SubscribeToNewsletterPayload['status']>();
 	const [requestInProgress, setRequestInProgress] = useState(false);
 	const inputRef = useRef<HTMLInputElement>(null);
@@ -42,7 +42,7 @@ export const SubscribeForm = () => {
 	return (
 		<>
 			{!status && (
-				<div className="relative w-1/2 rounded-full bg-white p-2 dark:bg-neutral-950">
+				<div className={`relative ${widthFraction} rounded-full bg-white p-2 dark:bg-neutral-950`}>
 					<input
 						ref={inputRef}
 						type="email"

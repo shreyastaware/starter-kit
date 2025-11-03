@@ -1,5 +1,3 @@
-'use client';
-
 import { useEmbeds } from '@starter-kit/utils/renderer/hooks/useEmbeds';
 import { markdownToHtml } from '@starter-kit/utils/renderer/markdownToHtml';
 import { memo } from 'react';
@@ -8,13 +6,9 @@ type Props = {
 	contentMarkdown: string;
 };
 
-const MarkdownToHtml1 = ({ contentMarkdown }: Props) => {
+const _MarkdownToHtml = ({ contentMarkdown }: Props) => {
 	const content = markdownToHtml(contentMarkdown);
 	useEmbeds({ enabled: true });
-	// run embed processing AFTER the HTML mounts
-	// useEffect(() => {
-	// 	useEmbeds({ enabled: true });
-	// }, []);	
 
 	return (
 		<div
@@ -24,4 +18,4 @@ const MarkdownToHtml1 = ({ contentMarkdown }: Props) => {
 	);
 };
 
-export const MarkdownToHtml = memo(MarkdownToHtml1);
+export const MarkdownToHtml = memo(_MarkdownToHtml);
